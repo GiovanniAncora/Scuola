@@ -1,0 +1,20 @@
+CREARE LE ROTTE DINAMICAMENTE CON PROTOCOLLO RIPv2 usando DISTANCE VECTOR
+Protocollo RIP versione 2
+
+-- Andare sui router e abilitare le interfacce.
+- Andare sulle CLI
+Router>enable
+Router#configure terminal
+- Scrivere i comandi. Si finisce con Ctrl-Z
+Router(config)#router rip
+Router(config-router)#version 2
+- Dire quali RETI appartengono al router
+Router(config-router)#network <Ip della rete>
+...
+
+- Mostrare le tabelle di routing
+Router#show ip route
+
+- Mostrare le comunicazioni rip
+Router#debug ip rip		// Aspettare un po' e mostra tutte le comunicaioni rip
+Router#no debug ip rip		// Chiude il debug
