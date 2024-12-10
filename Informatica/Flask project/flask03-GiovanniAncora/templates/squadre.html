@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block titolo %}
+  Squadre
+{% endblock %}
+
+{% block testo %}
+  <h2>Squadre</h2>
+  <ul>
+    {% for squadra in squadre %}
+    <li>{{ squadra }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

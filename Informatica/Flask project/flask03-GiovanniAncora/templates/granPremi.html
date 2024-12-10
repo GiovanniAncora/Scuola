@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block titolo %}
+Gran Premi
+{% endblock %}
+
+{% block testo %}
+<h2>Gran Premi</h2>
+<ul>
+  {% for gp in granPremi %}
+  <li>{{ gp }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

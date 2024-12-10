@@ -1,0 +1,16 @@
+Appunti 10/12/2024
+Giovanni Ancora
+
+**BASH COMMAND**
+Il client manda comandi di sistemi operativo al server.
+Bisogna mantenere aperta la connessione, fino a quando non prendo il comando per la fine.
+Il server offre un menù. Il 9 è la exit.
+Il server sta in un loop infinito fino a quando non si clicca exit.
+
+
+Da fare:
+- Capire se la close/shutdown va fatta da client o da server o da entrambi
+- Scrivere il menù
+- Settare il server in modo tale da accettare richieste in loop
+- Settare le giuste richieste di linux in convertiLinux()
+- Settare il passaggio del file (vedi immagine, manda byte per byte).

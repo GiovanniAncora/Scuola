@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block titolo %}
+  Piloti
+{% endblock %}
+
+{% block testo %}
+  <h2>Piloti</h2>
+  <ul>
+    {% for pilota in piloti %}
+    <li>{{ pilota }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
