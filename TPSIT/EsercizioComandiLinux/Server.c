@@ -1,7 +1,7 @@
 /*
  * Programma creato da Ancora Giovanni, classe 5^Ci a.s. 2024/25
  * Date di scrittura del programma: 10/12/2024
- * Creazione di un server che andr� a comunicare con il client.
+ * Creazione di un server che andrà  a comunicare con il client.
  */
  
 #include <stdio.h>
@@ -17,7 +17,7 @@
 #include <arpa/inet.h>
 
 #define PORT 8090
-#define TIMEOUT 1 * CLOCKS_PER_SEC
+#define TIMEOUT 5 * CLOCKS_PER_SEC
 
 struct sockaddr_in creaId_dispositivo(int port, char* ip, int* conferma);
 int invia(int sock, char* richiesta);
@@ -46,6 +46,7 @@ int main(){
 	server = creaId_dispositivo(8090, "0.0.0.0", &conferma);	// Mettere "0.0.0.0" è come usare INADDR_ANY. Il server accetterà richieste da qualsiasi sua interfaccia.
 	if(conferma != 0){
 		perror("SERVER: Errore nella creazione della sockaddr_in del server");
+		exit(EXIT_FAILURE);
 	}
 	
 	if((bind(sockServer, (struct sockaddr*) &server, sizeof(server))) != 0){
@@ -65,6 +66,7 @@ int main(){
 
 	if(nuovoSocket == -1){
 		perror("SERVER: Operazione di accept fallita");
+		close(nuovoSocket);
 		return 0;
 	}
 	puts("SERVER: Operazione di accept effettuata.\n");
@@ -72,13 +74,28 @@ int main(){
 	char* menu = "Menu\n";
 
 	if(invia(nuovoSocket, menu) == -1){
-		perror("Errore nell'invio del men�");
+		perror("SERVER: Errore nell'invio del menù");
+		close(nuovoSocket);
 		exit(EXIT_FAILURE);
 	}
-	puts("SERVER: Inviata una risposta al client.\n");
+	puts("SERVER: Menu inviato al client.");
 
+	int finito = 0;
+	do{
+		puts("Ricezione richiesta.");
+		if(ricevi(nuovoSocket, buffer) == -1){
+			perror("SERVER: Errore nella ricezione della richiesta");
+			close(nuovoSocket);
+			exit(EXIT_FAILURE);
+		}
+		puts("SERVER: Esecuzione del comando.");
+		if(system(buffer) != 0){
+			puts("SERVER: Errore nell'esecuzione del comando.");
+		}
+	}while(!finito);
+	
 	puts("SERVER: Ho chiuso il socket virtuale.\n");
-	shutdown(nuovoSocket, 2);
+	close(nuovoSocket);
 
 
 	return 0;
@@ -88,7 +105,7 @@ int invia(int sock, char* richiesta){
 	// La funzione invia prova a inviare la richiesta del dispositivo, che viene passata come stringa nel parametro 'richiesta'.
 	// La richiesta viene inviata dal socket passato nel parametro sock.
 	
-	if (send(sock, richiesta, strlen(richiesta), 0) < 0){	// Se la funzione send restituisce un valore negativo, c'� stato un errore.
+	if (send(sock, richiesta, strlen(richiesta), 0) < 0){	// Se la funzione send restituisce un valore negativo, c'ï¿½ stato un errore.
     	perror("Impossibile inviare la richiesta");
     	return -1;
 	}
@@ -99,7 +116,7 @@ struct sockaddr_in creaId_dispositivo(int port, char* ip, int* conferma){
 	// Con la sockaddr_in tutte le informazioni del dispositivo sono salvate in maniera standardizzata per la connessione, in una struct.
 	// La variabile puntatore chiamata conferma serve perché lì scriveremo se l'operazione è andata a buon fine o meno, attraverso un valore di flag.
 	
-	struct sockaddr_in disp;	// Dichiaro la struct che verrà restituita
+	struct sockaddr_in disp;	// Dichiaro la struct che verrÃ  restituita
 	memset(&disp, 0, sizeof(disp));	// Azzero i contenuti della struct in caso sia stata dichiarata in un'area di memoria precedentemente occupata
 	
 	// Settaggio delle informazioni di base
@@ -120,18 +137,18 @@ int ricevi(int sock, char* buffer){
 	// Viene restituito -1 se c'è stato un errore, 0 se è tutto OK.
 	
 	int start = clock();	// Per fare il controllo di timeout, salvo in start il numero di clock prima di attendere la risposta
-	int now = clock();		// Anche in questa salvo il numero di clock attuali. Questa variabile però si aggiornerà per poter salvare il tempo.
+	int now = clock();		// Anche in questa salvo il numero di clock attuali. Questa variabile però si aggiornerÃ  per poter salvare il tempo.
 
     while((now - start) < TIMEOUT){	// Continuo a fare l'operazione di ricevere finché non passa un intervallo di tempo definito nella costante TIMEOUT
-        if((recv(sock, buffer, 4096, 0)) > 0){	// Quando la funzinoe recv restituirà un valore maggiore di 0, avrà ricevuto la risposta, quindi posso salvarla nel buffer e chiudere la connessione.
+        if((recv(sock, buffer, 4096, 0)) > 0){	// Quando la funzinoe recv restituirÃ  un valore maggiore di 0, avrà ricevuto la risposta, quindi posso salvarla nel buffer e chiudere la connessione.
 			return 0;
 		}
 		now = clock();	// Se ancora non ho ricevuto, aggiorno il tempo passato e ripeto l'operazione.
     }
     
-    // Se � passato il TIMEOUT e non ho ricevuto niente...
+    // Se è passato il TIMEOUT e non ho ricevuto niente...
     shutdown(sock, 2);	// Chiudo la connessione
-	perror("Nessuna risposta ricevuta");	// Stampo un messaggio di errore
+	puts("Nessuna risposta ricevuta.");	// Stampo un messaggio di errore
 	strcpy(buffer, "Nessuna risposta ricevuta");	// Salvo nel buffer un messaggio di errore
 	return -1;	// Restituisco -1 così faccio sapere al programma main che c'è stato un errore.
 }
