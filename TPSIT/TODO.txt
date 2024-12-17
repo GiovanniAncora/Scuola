@@ -1,0 +1,6 @@
+-- Esercizi che ci devono essere
+
+1) Client generico
+2) Server generico
+3) Esercizio Echo Replay
+4) Esercizio Comandi Linux

@@ -1,7 +1,7 @@
 /*
  * Programma creato da Ancora Giovanni, classe 5^Ci a.s. 2024/25
- * Date di scrittura del programma: 10/12/2024
- * Creazione di un server che andrà  a comunicare con il client.
+ * Date di scrittura del programma: 10/12/2024, 16/12/2024, 17/12/2024
+ * Creazione di un server che andr� a comunicare con il client.
  */
  
 #include <stdio.h>
@@ -74,7 +74,7 @@ int main(){
 	char* menu = "Menu\n";
 
 	if(invia(nuovoSocket, menu) == -1){
-		perror("SERVER: Errore nell'invio del menù");
+		perror("SERVER: Errore nell'invio del men�");
 		close(nuovoSocket);
 		exit(EXIT_FAILURE);
 	}
@@ -147,7 +147,7 @@ int ricevi(int sock, char* buffer){
     }
     
     // Se è passato il TIMEOUT e non ho ricevuto niente...
-    shutdown(sock, 2);	// Chiudo la connessione
+    close(sock);	// Chiudo la connessione
 	puts("Nessuna risposta ricevuta.");	// Stampo un messaggio di errore
 	strcpy(buffer, "Nessuna risposta ricevuta");	// Salvo nel buffer un messaggio di errore
 	return -1;	// Restituisco -1 così faccio sapere al programma main che c'è stato un errore.

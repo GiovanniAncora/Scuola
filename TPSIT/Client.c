@@ -39,7 +39,7 @@ int main(){
 	// Se mi trovo qui, le operazioni di creazione della sockaddr_in sono andate a buon fine
 	
 	sock = socket(AF_INET, SOCK_STREAM, 0);	// Creo il socket di connessione del client, famiglia AF_INET, tipo SOCK_STREAM. Lo 0 serve per utilizzare il protocollo di default per questo tipo di socket.
-	printf("\nCLIENT: Ho creato il mio socket. Il suo descrittore è il numero %d.\n", sock);
+	puts("\nCLIENT: Ho creato il mio socket.");
 
 	if (connetti(sock, server) == -1){	// Provo a connettermi con la funzione connetti. Se c'  stato un errore, viene restituito -1 e termino.
 		return 0;
@@ -48,7 +48,7 @@ int main(){
 
 	
 	if(ricevi(sock, menu) == -1){
-		perror("Errore nella ricezione del menù");
+		perror("Errore nella ricezione del menÃ¹");
 		exit(EXIT_FAILURE);
 	}
 	puts(menu);
@@ -114,13 +114,11 @@ int connetti(int sock, struct sockaddr_in server){
 int invia(int sock, char* richiesta){
 	// La funzione invia prova a inviare la richiesta del dispositivo, che viene passata come stringa nel parametro 'richiesta'.
 	// La richiesta viene inviata dal socket passato nel parametro sock.
-	printf("Stiamo nella funzione invia. Devo inviare la richiesta (%s) Attraverso il socket %d.\n", richiesta, sock);
+	
 	if (send(sock, richiesta, strlen(richiesta), 0) < 0){	// Se la funzione send restituisce un valore negativo, c'  stato un errore.
     	perror("Impossibile inviare la richiesta");
     	return -1;
 	}
-	puts("Fine dell'operazione invia.");
-	return 0;
 }
 
 int ricevi(int sock, char* buffer){
@@ -132,12 +130,14 @@ int ricevi(int sock, char* buffer){
 
     while((now - start) < TIMEOUT){	// Continuo a fare l'operazione di ricevere finch  non passa un intervallo di tempo definito nella costante TIMEOUT
         if((recv(sock, buffer, 4096, 0)) > 0){	// Quando la funzinoe recv restituir  un valore maggiore di 0, avr  ricevuto la risposta, quindi posso salvarla nel buffer e chiudere la connessione.
+          shutdown(sock, 2);
           return 0;
         }
 		  now = clock();	// Se ancora non ho ricevuto, aggiorno il tempo passato e ripeto l'operazione.
     }
     
     // Se   passato il TIMEOUT e non ho ricevuto niente...
+    shutdown(sock, 2);	// Chiudo la connessione
 	perror("CLIENT: Nessuna risposta ricevuta dal server (Timeout)");	// Stampo un messaggio di errore
 	strcpy(buffer, "Nessuna risposta ricevuta");	// Salvo nel buffer un messaggio di errore
 	return -1;	// Restituisco -1 cos  faccio sapere al programma main che c'  stato un errore.
