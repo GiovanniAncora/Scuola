@@ -1,0 +1,15 @@
+Da HTTPS:
+- Parlare dei certificati.
+  - Chi rilascia i certificati?
+    - Enti certificatori
+    - Web of trust
+
+WEB OF TRUST:
+- Su questo si basano i single sign on
+- Questi consistono in dei server in cui tutti i singoli autenti ritenuti "affidabili.
+(Tipo Google Trust Services)
+
+ENTI CERTIFICATORI:
+- Associazioni che permettono di garantire l'affidabilità di un utente o di un sito sul web attraverso il rilascio di un certificato digitale.
+- È possibile vedere il certificato digitale su tutti i siti che utilizzano l'HTTPS cliccando sul lucchetto.
+- Il certificato contiene informazioni sull'ente a cui è stato assegnato, sulla sua chiave pubblica e sulla validità del certificato stesso.

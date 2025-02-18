@@ -1,0 +1,44 @@
+-- ANCORA GIOVANNI, 5^Ci --
+
+*18/02/2025*
+||INSERIMENTO END POINT||
+
+- Disposizione nella logical view delle aree della palestra.
+
+
+
+! Dato che i macchinari devono poter essere spostati tra la palestra degli attrezzi e le sale dei corsi, si è scelto di considerare i macchinari come connessi alla rete in maniera wireless.
+- Inserimento di alcuni (5) macchinari della palestra nella forma di dispositivi wireless generici. Questi vengono inseriti sia nella palestra degli attrezzi, sia nelle sale corsi.
+! A livello LOGICO quindi le due sale corsi e la palestra degli attrezzi sono considerate la stessa sezione del sistema.
+	- Macchinari (Macchinario Palestra 1-5)
+
+- Inserimento dei dispositivi dell'ufficio accettazione e rapporti con la clientela.
+	- PC (PC Reception)
+	- Stampante (Stampante Reception)
+	- Fax (Fax Reception)
+		? Il fax in packet tracer è rappresentato da un'altra stampante.
+
+? Nello primo piano di medicina, l'unica area che presenta dispositivi connessi alla rete è lo studio medico, dato che la traccia impone "Nelle sale avvengono le visite, mentre nello studio medico vengono redatti i referti medici".
+- Inserimento all'interno dello studio medico di due PC per l'inserimento dei dati per le due sale visita e di un server che fornirà il servizio di archivio dei dati clinici e dei documenti delle visite, oltre che per gli altri servizi della palestra.
+	? È stata scelta proprio questa posizione per il server dato che lo studio medico innanzitutto è un'area più sicura e ristretta solamente ai membri dello staff. Inoltre si trova in una posizione fisicamente e logicamente centrale all'interno del sistema.
+	- 2 PC (PC Medico 1 e 2)
+	- Server (Server)
+
+- Nel secondo piano ci sono le stanze per il trattamento estetico, SPA e magazzino. Delle prime due, l'unico collegamento che hanno con la rete è in realtà l'accettazione delle prenotazioni e l'archiviazione dei dati a esse riferiti. Questa reception sarà incorporata in quella del piano terra. Al secondo piano, perciò, non sono presenti dispositivi connessi alla rete.
+
+- Le aree non connesse alla rete sono rimosse dallo schema LOGICO. (1P: Sala visita 1 e 2, 2P: Sala trattamento estetico-salutistico, sala massaggi e SPA, magazzino).
+
+|| CONNESSIONE DEI DISPOSITIVI ||
+- Inserimento di un access point per la connessione dei macchinari wireless della palestra e delle sale corsi. L'access point sarà collocato all'interno della palestra degli attrezzi.
+- Settaggio dell'access point.
+	- SSID: Macchinari palestra
+	- Autenticazione: WPA2-PSK
+	- PSK Pass Phrase: Palestra123
+- Connessione dei macchinari all'access point
+
+- Inserimento Switch
+	? Si è deciso di inserire uno switch per ogni area logica di dispositivi nella palestra. Questi switch saranno poi collegati tra loro a maglia, considerato che il numero di switch nell'effettivo è solo 3, quindi solo 3 connessioni.
+		- Switch Reception
+		- Switch Studio Medico
+		- Switch Macchinari
+TODO: Switch per connettere a router, per fare il "rettangolo" (?)
