@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Documento scritto da Ancora Giovanni, 5^Ci, il 21/02/2025 -->
+<!-- Progettare, mediante uno schema XSD un linguaggio XML per la creazione di VOCABOLARI intesi come elenchi di termini e in cui per ogni termine siano specificati uno o più significati. -->
+  <xs:element name="Vocabolario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="termine" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vocabolo"/>
+              <xs:element name="significato" maxOccurs="unbounded">
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

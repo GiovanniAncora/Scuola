@@ -1,0 +1,20 @@
+== ESERCIZIO N°[numero] ==
+-- Ancora Giovanni, 5^Ci --
+-- [data] --
+
+-- TRACCIA --
+[traccia]
+
+-- XSD --
+[xsd]
+
+-- XSD convertito in XML su liquid-technologies.com --
+[xsd-to-xml]
+
+-- XML di esempio --
+[xml]
+
+Risultato: Documento VALIDO
+
+-- XML riconvertito in XSD su liquid-technologies.com --
+[xml-to-xsd]
