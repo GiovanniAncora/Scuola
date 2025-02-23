@@ -41,4 +41,39 @@
 		- Switch Reception
 		- Switch Studio Medico
 		- Switch Macchinari
+		- Switch Router
 TODO: Switch per connettere a router, per fare il "rettangolo" (?)
+
+*23/02/2025*
+|| CONNESSIONE DEI DISPOSITIVI ||
+- Dato che gli switch non riescono a comunicare se creo qualche loop nelle comunicazioni, verranno connessi a stella, con lo switch dello studio medico che è quello centrale direttamente connesso al router.
+- Inserimento del router (RouterPT, chiamato Router).
+
+|| CONFIGURAZIONE IP DEI DISPOSITIVI ||
+? Dato che si tratta di una rete interna ad un edificio, in cui gli unici dispositivi di numero variabile sono i macchinari della palestra, che difficilmente saranno più di 200, è più che sufficiente una rete di tipo C (256 IP) per tutta la struttura.
+- Rete Scelta: 192.168.0.0/24
+- Default Gateway (Router): 192.168.0.254
+
+Server: 192.168.0.1
+PC Medico 1 e 2: 192.168.0.2 e 192.168.0.3
+PC Reception: 192.168.0.16
+Stampante Reception: 192.168.0.17
+FAX Reception: 192.168.0.18
+
+Macchinari della palestra: DHCP (da 192.168.0.32 a 192.168.0.253)
+--> Configurazione DHCP
+
+|| CONFIGURAZIONE DHCP ||
+Pool Name: serverPool
+Default Gateway: 192.168.0.254
+DNS Server: 0.0.0.0
+Start IP Address: 192.168.0.32
+Subnet Mask: 255.255.255.0
+N° Max of Uses: 222 (fino a 192.168.0.253)
+Altre cose: lasciate di default
+--> Salvataggio
+- Configurazione dei macchinari per il DHCP.
+
+|| SISTEMAZIONE PHYSICAL VIEW ||
+- Creazioni immagini piantina
+- Tutto il resto
