@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Documento scritto da Ancora Giovanni, 5^Ci, il 28/01/2025 -->
+
+<!DOCTYPE Scuola [
+    <!ELEMENT Scuola (classi+)>
+    <!ELEMENT classi (classe+)>
+    <!ELEMENT classe (id, nome, insegnante, studenti)>
+    <!ELEMENT id (#PCDATA)>
+    <!ELEMENT nome (#PCDATA)>
+    <!ELEMENT insegnante (#PCDATA)>
+    <!ELEMENT studenti (studente+)>
+    <!ELEMENT studente (nome, cognome, eta)>
+    <!ELEMENT cognome (#PCDATA)>
+    <!ELEMENT eta (#PCDATA)>
+]>
+
+<Scuola>
+    <classi>
+        <classe>
+            <id>001</id>
+            <nome>5^Ci</nome>
+            <insegnante>Lucilla Iannetta</insegnante>
+            <studenti>
+                <studente>
+                    <nome>Giovanni</nome>
+                    <cognome>Ancora</cognome>
+                    <eta>18</eta>
+                </studente>
+                <studente>
+                    <nome>Mattia</nome>
+                    <cognome>Arseni</cognome>
+                    <eta>18</eta>
+                </studente>
+                <studente>
+                    <nome>Giuseppe</nome>
+                    <cognome>Tedesco</cognome>
+                    <eta>18</eta>
+                </studente>
+            </studenti>
+        </classe>
+
+        <classe>
+            <id>999</id>
+            <nome>4^Zi</nome>
+            <insegnante>Mario Rossi</insegnante>
+            <studenti>
+                <studente>
+                    <nome>Tizio</nome>
+                    <cognome>Rossi</cognome>
+                    <eta>17</eta>
+                </studente>
+                <studente>
+                    <nome>Caio</nome>
+                    <cognome>Verdi</cognome>
+                    <eta>16</eta>
+                </studente>
+            </studenti>
+        </classe>
+    </classi>
+</Scuola>
