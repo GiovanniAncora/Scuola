@@ -1,62 +1,6 @@
-== ESERCIZIO VOCABOLARIO ==
--- Ancora Giovanni, 5^Ci --
-     -- 21/02/2025 --
-
--- TRACCIA --
-Progettare, mediante uno schema XSD un linguaggio XML per la creazione di VOCABOLARI intesi come elenchi di termini e in cui per ogni termine siano specificati uno o più significati.
-
--- XSD --
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="Vocabolario">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="termine" maxOccurs="unbounded">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="vocabolo"/>
-              <xs:element name="significato" maxOccurs="unbounded">
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-</xs:schema>
-
--- XSD convertito in XML su liquid-technologies.com --
 <?xml version="1.0" encoding="utf-8"?>
 <Vocabolario xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <termine>
-    <vocabolo>string</vocabolo>
-    <significato>string</significato>
-    <significato>string</significato>
-    <significato>string</significato>
-    <significato>string</significato>
-    <significato>string</significato>
-  </termine>
-  <termine>
-    <vocabolo>string</vocabolo>
-    <significato>string</significato>
-  </termine>
-  <termine>
-    <vocabolo>string</vocabolo>
-    <significato>string</significato>
-    <significato>string</significato>
-    <significato>string</significato>
-    <significato>string</significato>
-    <significato>string</significato>
-  </termine>
-  <termine>
-    <vocabolo>string</vocabolo>
-    <significato>string</significato>
-  </termine>
-</Vocabolario>
-
--- XML di esempio --
-<?xml version="1.0" encoding="utf-8"?>
-<Vocabolario xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- Documento scritto da Ancora Giovanni, 5^Ci il 21/02/2025 -->
   <termine>
     <vocabolo>pleonastico</vocabolo>
     <significato>TS ret., gramm. che costituisce un pleonasmo grammaticale o stilistico</significato>
@@ -82,25 +26,3 @@ Progettare, mediante uno schema XSD un linguaggio XML per la creazione di VOCABO
     <significato>fig., ciò che imita o riproduce una determinata realtà: un romanzo che è lo specchio della società contemporanea | ciò che è indizio dei gusti, dei sentimenti, del carattere e sim. di una persona: gli occhi sono lo specchio dell’anima</significato>
   </termine>
 </Vocabolario>
-
-Risultato: Documento VALIDO
-
--- XML riconvertito in XSD su liquid-technologies.com --
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
-<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="Vocabolario">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element maxOccurs="unbounded" name="termine">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="vocabolo" type="xs:string" />
-              <xs:element maxOccurs="unbounded" name="significato" type="xs:string" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-</xs:schema>
