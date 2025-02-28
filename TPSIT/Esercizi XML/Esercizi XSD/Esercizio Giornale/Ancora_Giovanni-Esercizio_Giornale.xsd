@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Documento scritto da Ancora Giovanni, 5^Ci il 21/02/2025 -->
+  <xs:element name="Giornale">
+    <xs:complexType>
+	  <xs:sequence>
+	    <xs:element name="articolo" type="tipoArticolo" maxOccurs="unbounded" />
+		  <xs:complexType name="tipoArticolo">
+		    <xs:sequence>
+			  <xs:element name="titolo" type="xs:string" />
+			  <xs:element name="sottotitolo" type="xs:string" />
+			  <xs:element name="intestazione" type="xs:string" />
+			  <xs:element name="autore" type="tipoAutore">
+			    <xs:complexType name="tipoAutore">
+				  <xs:sequence>
+				    <xs:element name="nome" type="xs:string" />
+				    <xs:element name="cognome" type="xs:string" />
+				  </xs:sequence>
+			    </xs:complexType>
+			  </xs:element>
+			  <xs:element name="data" type="xs:date" />
+			  <xs:element name="corpo" type="tipoCorpo">
+			    <xs:complexType name="tipoCorpo">
+				  <xs:sequence>
+				    <xs:element name="paragrafo" type="xs:string" maxOccurs="unbounded" />
+				  </xs:sequence>
+			    </xs:complexType>
+			  </xs:element>
+		    </xs:sequence>
+		  </xs:complexType>
+		</xs:element>
+	  </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
