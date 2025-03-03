@@ -1,0 +1,56 @@
+<?xml version="1.0" charset="UTF-8"?>
+<xs:schema xmlns:xs="http://W3.org/2001/XMLSchema">
+<!-- Documento scritto da Ancora Giovanni, 5^Ci il 03/03/2025 -->
+	<xs:element name="catalogo">
+		<xs:complexType>
+		<xs:sequence>
+			<xs:element name="prodotto" maxOccurs="unbounded">
+				<xs:complexType>
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="([a-z]|[A-Z]|[0-9])*"/>
+								<xs:maxLength value="10"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element name="id">
+					<xs:element name="nome">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="50"/>
+							</xs:restriction>
+						</xs:simpleType>
+					<xs:element name="descrizione">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="200"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="prezzo">
+						<xs:simpleType>
+							<xs:restriction base="xs:decimal">
+								</xs:fractionDigits value="2">
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="quantita" type="xs:integer"/>
+					<xs:element name="brand" type="xs:string"/>
+					<xs:element name="categoria">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="Smartphone"/>
+								<xs:enumeration value="Laptop"/>
+								<xs:enumeration value="Tablet"/>
+								<xs:enumeration value="Accessori"/>
+							<xs:restriction>
+						</xs:simpleType>
+					<xs:element>
+				</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
