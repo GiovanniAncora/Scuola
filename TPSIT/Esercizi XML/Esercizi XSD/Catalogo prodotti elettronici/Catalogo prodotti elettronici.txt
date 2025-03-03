@@ -1,0 +1,153 @@
+== ESERCIZIO Catalogo prodotti elettronici ==
+-- Ancora Giovanni, 5^Ci --
+-- 03/03/2025 --
+
+-- TRACCIA --
+Si vuole strutturare un file XML per rappresentare un catalogo di prodotti elettronici con le seguenti caratteristiche:
+	- Ogni catalogo contiene più prodotti.
+	- Ogni prodotto deve avere:
+		- Un codice identificativo (alfanumerico, massimo 10 caratteri).
+		- Un nome (stringa, massimo 50 caratteri).
+		- Una descrizione (stringa, massimo 200 caratteri).
+		- Un prezzo (numero decimale con due cifre decimali).
+		- Una quantità disponibile (numero intero).
+		- Un brand (stringa).
+		- Una categoria che può essere tra:
+			- Smartphone
+			- Laptop
+			- Tablet
+			- Accessori
+
+-- XSD --
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Documento scritto da Ancora Giovanni, 5^Ci il 03/03/2025 -->
+	<xs:element name="catalogo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="prodotto" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-z]|[A-Z]|[0-9])*"/>
+										<xs:maxLength value="10"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="nome">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="50"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="descrizione">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="prezzo">
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal">
+										<xs:fractionDigits value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="quantita" type="xs:positiveInteger"/>
+							<xs:element name="brand" type="xs:string"/>
+							<xs:element name="categoria">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Smartphone"/>
+										<xs:enumeration value="Laptop"/>
+										<xs:enumeration value="Tablet"/>
+										<xs:enumeration value="Accessori"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+-- XSD convertito in XML su liquid-technologies.com --
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<catalogo xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prodotto>
+    <id>xQ58a7vDHvkV</id>
+    <nome>string</nome>
+    <descrizione>string</descrizione>
+    <prezzo>2304550.23</prezzo>
+    <quantita>4639</quantita>
+    <brand>string</brand>
+    <categoria>Accessori</categoria>
+  </prodotto>
+</catalogo>
+
+-- XML di esempio --
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Documento creato da Ancora Giovanni, 5^Ci il 03/03/2025 -->
+<catalogo xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prodotto>
+    <id>La001</id>
+    <nome>Laptop 123abc</nome>
+    <descrizione>Primo modello del laptop</descrizione>
+    <prezzo>300.99</prezzo>
+    <quantita>100</quantita>
+    <brand>HP</brand>
+    <categoria>Laptop</categoria>
+  </prodotto>
+  <prodotto>
+    <id>La002</id>
+    <nome>Laptop 456def</nome>
+    <descrizione>Secondo modello del laptop</descrizione>
+    <prezzo>360.99</prezzo>
+    <quantita>150</quantita>
+    <brand>HP</brand>
+    <categoria>Laptop</categoria>
+  </prodotto>
+   <prodotto>
+    <id>Sm001</id>
+    <nome>Telefono 123</nome>
+    <descrizione>Telefono famoso</descrizione>
+    <prezzo>500.99</prezzo>
+    <quantita>500</quantita>
+    <brand>Samsung</brand>
+    <categoria>Smartphone</categoria>
+  </prodotto>
+</catalogo>
+
+Risultato: Documento VALIDO
+
+-- XML riconvertito in XSD su liquid-technologies.com --
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="catalogo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="prodotto">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:string" />
+              <xs:element name="nome" type="xs:string" />
+              <xs:element name="descrizione" type="xs:string" />
+              <xs:element name="prezzo" type="xs:decimal" />
+              <xs:element name="quantita" type="xs:unsignedShort" />
+              <xs:element name="brand" type="xs:string" />
+              <xs:element name="categoria" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
