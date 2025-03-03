@@ -44,7 +44,7 @@
 								<xs:enumeration value="Laptop"/>
 								<xs:enumeration value="Tablet"/>
 								<xs:enumeration value="Accessori"/>
-							<xs:restriction>
+							</xs:restriction>
 						</xs:simpleType>
 					<xs:element>
 				</xs:sequence>
