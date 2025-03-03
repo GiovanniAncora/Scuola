@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Documento creato da Ancora Giovanni, 5^Ci il 03/03/2025 -->
+<catalogo xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prodotto>
+    <id>La001</id>
+    <nome>Laptop 123abc</nome>
+    <descrizione>Primo modello del laptop</descrizione>
+    <prezzo>300.99</prezzo>
+    <quantita>100</quantita>
+    <brand>HP</brand>
+    <categoria>Laptop</categoria>
+  </prodotto>
+  <prodotto>
+    <id>La002</id>
+    <nome>Laptop 456def</nome>
+    <descrizione>Secondo modello del laptop</descrizione>
+    <prezzo>360.99</prezzo>
+    <quantita>150</quantita>
+    <brand>HP</brand>
+    <categoria>Laptop</categoria>
+  </prodotto>
+   <prodotto>
+    <id>Sm001</id>
+    <nome>Telefono 123</nome>
+    <descrizione>Telefono famoso</descrizione>
+    <prezzo>500.99</prezzo>
+    <quantita>500</quantita>
+    <brand>Samsung</brand>
+    <categoria>Smartphone</categoria>
+  </prodotto>
+</catalogo>
