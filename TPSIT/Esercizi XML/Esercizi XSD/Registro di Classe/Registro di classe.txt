@@ -6,15 +6,264 @@
 Progettare, mediante uno schema XSD un linguaggio XML per la realizzazione di registri dell'insegnante in cui per ogni studente sono riportati il nome, il cognome, la classe, le date dei giorni di assenza, le valutazioni comprendenti la data, la tipologia (scritta, orale, pratica, test), il punteggio e il voto decimale.
 
 -- XSD --
-[xsd]
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="https://www.w3.org/2001/XMLSchema">
+	<xs:element name="Registro">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="studente" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="nome">
+								<xs:simpleType>
+									<xs:restriction base="string">
+										<pattern value="([a-z]|[A-Z]|" ")*"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cognome">
+								<xs:simpleType>
+									<xs:restriction base="string">
+										<pattern value='([a-z]|[A-Z]|" ")*'/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="classe">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<pattern value="([1-5])([a-z]|[A-Z])*"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="assenze">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="assenza" type="xs:date" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="valutazioni">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="valutazione" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="data" type="xs:date"/>
+													<xs:element name="tipologiaEsame">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="Scritto"/>
+																<xs:enumeration value="Orale"/>
+																<xs:enumeration value="Pratico"/>
+																<xs:enumeration value="Test"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="punteggio" type="xs:integer"/>
+													<xs:element name="voto">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:minInclusive value="0" />
+																<xs:maxInclusive value="10" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
 
 -- XSD convertito in XML su liquid-technologies.com --
-[xsd-to-xml]
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<Registro xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <studente>
+    <nome></nome>
+    <cognome> MY 	fM	</cognome>
+    <classe>5ROD</classe>
+    <assenze>
+      <assenza>1986-08-14</assenza>
+      <assenza>1986-08-23</assenza>
+    </assenze>
+    <valutazioni>
+      <valutazione>
+        <data>1985-04-25</data>
+        <tipologiaEsame>Scritto</tipologiaEsame>
+        <punteggio>-2470</punteggio>
+        <voto>9.49</voto>
+      </valutazione>
+    </valutazioni>
+  </studente>
+  <studente>
+    <nome> 		 W</nome>
+    <cognome> Z</cognome>
+    <classe>1</classe>
+    <assenze>
+      <assenza>1995-09-13</assenza>
+    </assenze>
+    <valutazioni>
+      <valutazione>
+        <data>1993-06-20</data>
+        <tipologiaEsame>Pratico</tipologiaEsame>
+        <punteggio>1738</punteggio>
+        <voto>8.14</voto>
+      </valutazione>
+      <valutazione>
+        <data>1993-01-27</data>
+        <tipologiaEsame>Orale</tipologiaEsame>
+        <punteggio>190</punteggio>
+        <voto>3.58</voto>
+      </valutazione>
+      <valutazione>
+        <data>2005-05-24</data>
+        <tipologiaEsame>Orale</tipologiaEsame>
+        <punteggio>-3044</punteggio>
+        <voto>5.07</voto>
+      </valutazione>
+    </valutazioni>
+  </studente>
+  <studente>
+    <nome> V</nome>
+    <cognome>zP  zw	I	M</cognome>
+    <classe>2tA</classe>
+    <assenze>
+      <assenza>2006-10-21</assenza>
+      <assenza>1981-06-20</assenza>
+      <assenza>2005-01-11</assenza>
+      <assenza>1995-08-11</assenza>
+    </assenze>
+    <valutazioni>
+      <valutazione>
+        <data>1991-12-21</data>
+        <tipologiaEsame>Orale</tipologiaEsame>
+        <punteggio>-1255</punteggio>
+        <voto>.78</voto>
+      </valutazione>
+    </valutazioni>
+  </studente>
+</Registro>
 
 -- XML di esempio --
-[xml]
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Documento scritto da Ancora Giovanni, 5^Ci, il 08/03/2025 -->
+<Registro xsi:noNamespaceSchemaLocation="Registro di classe.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <studente>
+    <nome>Giovanni</nome>
+    <cognome>Ancora</cognome>
+    <classe>5Ci</classe>
+    <assenze>
+      <assenza>2025-03-07</assenza>
+      <assenza>2025-03-05</assenza>
+    </assenze>
+    <valutazioni>
+      <valutazione>
+        <data>2025-03-04</data>
+        <tipologiaEsame>Scritto</tipologiaEsame>
+        <punteggio>110</punteggio>
+        <voto>9.5</voto>
+      </valutazione>
+    </valutazioni>
+  </studente>
+  <studente>
+    <nome>Gigio</nome>
+    <cognome>Topo</cognome>
+    <classe>1Zz</classe>
+    <assenze>
+      <assenza>1995-09-13</assenza>
+    </assenze>
+    <valutazioni>
+      <valutazione>
+        <data>1993-06-20</data>
+        <tipologiaEsame>Pratico</tipologiaEsame>
+        <punteggio>81</punteggio>
+        <voto>8.5</voto>
+      </valutazione>
+      <valutazione>
+        <data>1993-01-27</data>
+        <tipologiaEsame>Orale</tipologiaEsame>
+        <punteggio>190</punteggio>
+        <voto>7.5</voto>
+      </valutazione>
+      <valutazione>
+        <data>2005-05-24</data>
+        <tipologiaEsame>Orale</tipologiaEsame>
+        <punteggio>902</punteggio>
+        <voto>9</voto>
+      </valutazione>
+    </valutazioni>
+  </studente>
+  <studente>
+    <nome>Pinco</nome>
+    <cognome>Pallino</cognome>
+    <classe>2tA</classe>
+    <assenze>
+      <assenza>2006-10-21</assenza>
+      <assenza>1981-06-20</assenza>
+      <assenza>2005-01-11</assenza>
+      <assenza>1995-08-11</assenza>
+    </assenze>
+    <valutazioni>
+      <valutazione>
+        <data>1991-12-21</data>
+        <tipologiaEsame>Orale</tipologiaEsame>
+        <punteggio>900</punteggio>
+        <voto>10</voto>
+      </valutazione>
+    </valutazioni>
+  </studente>
+</Registro>
 
 Risultato: Documento VALIDO
 
 -- XML riconvertito in XSD su liquid-technologies.com --
-[xml-to-xsd]
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Registro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="studente">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nome" type="xs:string" />
+              <xs:element name="cognome" type="xs:string" />
+              <xs:element name="classe" type="xs:string" />
+              <xs:element name="assenze">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="assenza" type="xs:date" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="valutazioni">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="valutazione">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="data" type="xs:date" />
+                          <xs:element name="tipologiaEsame" type="xs:string" />
+                          <xs:element name="punteggio" type="xs:unsignedShort" />
+                          <xs:element name="voto" type="xs:decimal" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
