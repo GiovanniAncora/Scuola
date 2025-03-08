@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Test xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- Documento creato da Ancora Giovanni, 5^Ci, il 08/03/2025 -->
+  <quesito>
+    <domanda>XML è l'acronimo di...?</domanda>
+    <punteggioMax>5</punteggioMax>
+    <risposte>
+      <rispostaCorretta>eXtensible Markup Language</rispostaCorretta>
+      <rispostaErrata>eXtensive Markup Language</rispostaErrata>
+      <rispostaErrata>eXtensible Makeup Language</rispostaErrata>
+      <rispostaErrata>eXtensive Makeup Language</rispostaErrata>
+    </risposte>
+  </quesito>
+  <quesito>
+    <domanda>Quale di questi è un Pokémon di tipo roccia?</domanda>
+    <punteggioMax>10</punteggioMax>
+    <risposte>
+      <rispostaCorretta>Sudowoodo</rispostaCorretta>
+      <rispostaErrata>Victreebel</rispostaErrata>
+      <rispostaErrata>Azumarill</rispostaErrata>
+      <rispostaErrata>Giratina</rispostaErrata>
+    </risposte>
+  </quesito>
+  <quesito>
+    <domanda>Quando è nato il World Wide Web (www)?</domanda>
+    <punteggioMax>15</punteggioMax>
+    <risposte>
+      <rispostaCorretta>1989</rispostaCorretta>
+      <rispostaErrata>1969</rispostaErrata>
+      <rispostaErrata>1985</rispostaErrata>
+      <rispostaErrata>1965</rispostaErrata>
+    </risposte>
+  </quesito>
+  <quesito>
+    <domanda>Chi ha vinto il festival di Sanremo nel 2025?</domanda>
+    <punteggioMax>15</punteggioMax>
+    <risposte>
+      <rispostaCorretta>Olly</rispostaCorretta>
+      <rispostaErrata>Lucio Corsi</rispostaErrata>
+      <rispostaErrata>Fedez</rispostaErrata>
+      <rispostaErrata>Giorgia</rispostaErrata>
+    </risposte>
+  </quesito>
+</Test>
