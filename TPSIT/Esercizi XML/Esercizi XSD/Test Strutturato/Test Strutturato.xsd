@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Documento scritto da Ancora Giovanni, 5^Ci, l'08/03/2025 -->
+	<xs:element name="Test">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="quesito" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="domanda" type="xs:string"/>
+							<xs:element name="punteggioMax">
+								<xs:simpleType>
+									<xs:restriction base="xs:positiveInteger">
+										<xs:maxInclusive value="100"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="risposte">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="rispostaCorretta" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+										<xs:element name="rispostaErrata" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
