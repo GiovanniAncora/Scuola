@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Documento scritto da Ancora Giovanni, 5^Ci, il 08/03/2025 -->
+	<xs:element name="Registro">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="studente" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="nome">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-z]|[A-Z]|\s)*"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cognome">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([a-z]|[A-Z]|\s)*"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="classe">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="([1-5])([a-z]|[A-Z])*"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="assenze">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="assenza" type="xs:date" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="valutazioni">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="valutazione" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="data" type="xs:date"/>
+													<xs:element name="tipologiaEsame">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="Scritto"/>
+																<xs:enumeration value="Orale"/>
+																<xs:enumeration value="Pratico"/>
+																<xs:enumeration value="Test"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="punteggio" type="xs:integer"/>
+													<xs:element name="voto">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:minInclusive value="0" />
+																<xs:maxInclusive value="10" />
+																<xs:pattern value="[0-9](\.(25|5|75))?|10" />
+																<xs:fractionDigits value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
