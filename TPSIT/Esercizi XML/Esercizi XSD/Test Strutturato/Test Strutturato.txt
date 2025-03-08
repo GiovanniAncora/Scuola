@@ -1,0 +1,173 @@
+== ESERCIZIO TESTO STRUTTURATO ==
+-- Ancora Giovanni, 5^Ci --
+-- 08/03/2025 --
+
+-- TRACCIA --
+Progettare, mediante uno schema XSD unlinguaggio XML per la definizione di prove di verifica strutturate composte da quesiti a scelta multipla;
+Per ogni quesito è necessario specificare la domanda posta, il punteggio e le possibili risposte con indicazione, per ognuna, se esatta o meno.
+
+-- XSD --
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Documento scritto da Ancora Giovanni, 5^Ci, l'08/03/2025 -->
+	<xs:element name="Test">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="quesito" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="domanda" type="xs:string"/>
+							<xs:element name="punteggioMax">
+								<xs:simpleType>
+									<xs:restriction base="xs:positiveInteger">
+										<xs:maxInclusive value="100"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="risposte">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="rispostaCorretta" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+										<xs:element name="rispostaErrata" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+-- XSD convertito in XML su liquid-technologies.com --
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<Test xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <quesito>
+    <domanda>string</domanda>
+    <punteggioMax>92</punteggioMax>
+    <risposte>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaErrata>string</rispostaErrata>
+      <rispostaErrata>string</rispostaErrata>
+      <rispostaErrata>string</rispostaErrata>
+      <rispostaErrata>string</rispostaErrata>
+    </risposte>
+  </quesito>
+  <quesito>
+    <domanda>string</domanda>
+    <punteggioMax>32</punteggioMax>
+    <risposte>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaErrata>string</rispostaErrata>
+      <rispostaErrata>string</rispostaErrata>
+      <rispostaErrata>string</rispostaErrata>
+    </risposte>
+  </quesito>
+  <quesito>
+    <domanda>string</domanda>
+    <punteggioMax>33</punteggioMax>
+    <risposte>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaErrata>string</rispostaErrata>
+      <rispostaErrata>string</rispostaErrata>
+      <rispostaErrata>string</rispostaErrata>
+    </risposte>
+  </quesito>
+  <quesito>
+    <domanda>string</domanda>
+    <punteggioMax>77</punteggioMax>
+    <risposte>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaCorretta>string</rispostaCorretta>
+      <rispostaErrata>string</rispostaErrata>
+      <rispostaErrata>string</rispostaErrata>
+      <rispostaErrata>string</rispostaErrata>
+    </risposte>
+  </quesito>
+</Test>
+
+-- XML di esempio --
+<?xml version="1.0" encoding="UTF-8"?>
+<Test xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- Documento creato da Ancora Giovanni, 5^Ci, il 08/03/2025 -->
+  <quesito>
+    <domanda>XML è l'acronimo di...?</domanda>
+    <punteggioMax>5</punteggioMax>
+    <risposte>
+      <rispostaCorretta>eXtensible Markup Language</rispostaCorretta>
+      <rispostaErrata>eXtensive Markup Language</rispostaErrata>
+      <rispostaErrata>eXtensible Makeup Language</rispostaErrata>
+      <rispostaErrata>eXtensive Makeup Language</rispostaErrata>
+    </risposte>
+  </quesito>
+  <quesito>
+    <domanda>Quale di questi è un Pokémon di tipo roccia?</domanda>
+    <punteggioMax>10</punteggioMax>
+    <risposte>
+      <rispostaCorretta>Sudowoodo</rispostaCorretta>
+      <rispostaErrata>Victreebel</rispostaErrata>
+      <rispostaErrata>Azumarill</rispostaErrata>
+      <rispostaErrata>Giratina</rispostaErrata>
+    </risposte>
+  </quesito>
+  <quesito>
+    <domanda>Quando è nato il World Wide Web (www)?</domanda>
+    <punteggioMax>15</punteggioMax>
+    <risposte>
+      <rispostaCorretta>1989</rispostaCorretta>
+      <rispostaErrata>1969</rispostaErrata>
+      <rispostaErrata>1985</rispostaErrata>
+      <rispostaErrata>1965</rispostaErrata>
+    </risposte>
+  </quesito>
+  <quesito>
+    <domanda>Chi ha vinto il festival di Sanremo nel 2025?</domanda>
+    <punteggioMax>15</punteggioMax>
+    <risposte>
+      <rispostaCorretta>Olly</rispostaCorretta>
+      <rispostaErrata>Lucio Corsi</rispostaErrata>
+      <rispostaErrata>Fedez</rispostaErrata>
+      <rispostaErrata>Giorgia</rispostaErrata>
+    </risposte>
+  </quesito>
+</Test>
+
+Risultato: Documento VALIDO
+
+-- XML riconvertito in XSD su liquid-technologies.com --
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Test">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="quesito">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="domanda" type="xs:string" />
+              <xs:element name="punteggioMax" type="xs:unsignedByte" />
+              <xs:element name="risposte">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="rispostaCorretta" type="xs:string" />
+                    <xs:element maxOccurs="unbounded" name="rispostaErrata" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
