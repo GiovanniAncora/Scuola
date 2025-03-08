@@ -1,0 +1,20 @@
+== ESERCIZIO Registro di classe ==
+-- Ancora Giovanni, 5^Ci --
+-- 07/03/2025 --
+
+-- TRACCIA --
+Progettare, mediante uno schema XSD un linguaggio XML per la realizzazione di registri dell'insegnante in cui per ogni studente sono riportati il nome, il cognome, la classe, le date dei giorni di assenza, le valutazioni comprendenti la data, la tipologia (scritta, orale, pratica, test), il punteggio e il voto decimale.
+
+-- XSD --
+[xsd]
+
+-- XSD convertito in XML su liquid-technologies.com --
+[xsd-to-xml]
+
+-- XML di esempio --
+[xml]
+
+Risultato: Documento VALIDO
+
+-- XML riconvertito in XSD su liquid-technologies.com --
+[xml-to-xsd]
