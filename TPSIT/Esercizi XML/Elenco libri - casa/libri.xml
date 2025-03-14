@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="css/libri.css" type="text/css"?>
+<?xml-model href="libri.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<elenco>
+  <scuola>
+    <nome>I.T.T. "G. Giorgi"</nome>
+    <classi>
+      <classe>
+        <nome>5CI</nome>
+        <libri>
+          <libro>
+            <materia>Religione</materia>
+            <codice>9788810614068</codice>
+            <autore>Sergio Bocchini</autore>
+            <titolo>Incontro all'altro</titolo>
+            
+          </libro>
+        </libri>
+      </classe>
+    </classi>
+  </scuola>
+</elenco>
