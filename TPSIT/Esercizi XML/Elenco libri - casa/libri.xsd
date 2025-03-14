@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="elenco">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="scuola" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="classi">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="classe" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="nome">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:pattern value="^[1-9][A-Z]+"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="libri">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="libro" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="materia" type="xs:string"/>
+                                      <xs:element name="codice" type="xs:integer"/>
+                                      <xs:element name="autore" type="xs:string"/>
+                                      <xs:element name="titolo" type="xs:string"/>
+                                      <xs:element name="editore" type="xs:string"/>
+                                      <xs:element name="prezzo">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:decimal">
+                                            <xs:fractionDigits value="2"/>
+                                            <xs:minExclusive value="0"/>
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
