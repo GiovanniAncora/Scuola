@@ -20,6 +20,39 @@
               <img src="img/Copertina Religione.jpg"/>
             </html>
           </libro>
+          <libro>
+            <materia>Letteratura</materia>
+            <codice>9788839535900</codice>
+            <autore>Alessandra Terrile</autore>
+            <titolo>Vivere tante vite 3</titolo>
+            <editore>Paravia</editore>
+            <prezzo>41.90</prezzo>
+            <html xmlns="http://www.w3.org/1999/xhtml">
+              <img src="img/Copertina Italiano.jpg"/>
+            </html>
+          </libro>
+          <libro>
+            <materia>Inglese Tencnico</materia>
+            <codice>9788829853076</codice>
+            <autore>Ravecca Mirella</autore>
+            <titolo>Information Technology Competences and Skills</titolo>
+            <editore>Minerva Italica</editore>
+            <prezzo>27.90</prezzo>
+            <html xmlns="http://www.w3.org/1999/xhtml">
+              <img src="img/Copertina Inglese Tecnico.jpg"/>
+            </html>
+          </libro>
+          <libro>
+            <materia>Inglese</materia>
+            <codice>9780194602020</codice>
+            <autore>AA VV</autore>
+            <titolo>Venture B1+</titolo>
+            <editore>Oxford University Press</editore>
+            <prezzo>30.70</prezzo>
+            <html xmlns="http://www.w3.org/1999/xhtml">
+              <img src="img/Copertina Inglese.jpg"/>
+            </html>
+          </libro>
         </libri>
       </classe>
     </classi>
