@@ -39,14 +39,13 @@
                                           </xs:restriction>
                                         </xs:simpleType>
                                       </xs:element>
-                                      <!-- Da finire -->
-                                      <!-- <xs:element name="html" xmlns="http://www.w3.org/1999/xhtml">
+                                      <xs:element name="html">
                                         <xs:complexType>
                                           <xs:sequence>
-                                            <xs:element name="img"></xs:element>
+                                            <xs:element name="img" type="xs:anyURI"/>
                                           </xs:sequence>
                                         </xs:complexType>
-                                      </xs:element> -->
+                                      </xs:element>
                                     </xs:sequence>
                                   </xs:complexType>
                                 </xs:element>

@@ -14,7 +14,11 @@
             <codice>9788810614068</codice>
             <autore>Sergio Bocchini</autore>
             <titolo>Incontro all'altro</titolo>
-            
+            <editore>EDB EDIZ.DEHONIANE BO (CED)</editore>
+            <prezzo>17.10</prezzo>
+            <html xmlns="http://www.w3.org/1999/xhtml">
+              <img src="img/Copertina Religione.jpg"/>
+            </html>
           </libro>
         </libri>
       </classe>
