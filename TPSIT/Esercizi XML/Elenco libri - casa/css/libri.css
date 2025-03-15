@@ -1,0 +1,24 @@
+* {
+  background-color: ivory;
+}
+
+scuola{
+  display: block;
+}
+
+scuola *{
+  display: block;
+}
+
+libro{
+  display: grid;
+  grid-template-columns: 3fr 5fr 5fr 5fr 5fr 2fr 3fr;
+  align-items: center;
+  text-align: center;
+  column-gap: 1%;
+}
+
+img{
+  height: 100%;
+  width: 100%;
+}
