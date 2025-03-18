@@ -24,3 +24,12 @@ def login():
       return redirect(url_for('login'))
     
   return render_template_string(LOGIN_TEMPLATE)
+
+@app.route("/logout")
+def logout():
+  session.pop('username', None)
+  flash('Logout effettuato.', 'info')
+  return redirect(url_for('index'))
+
+if __name__ == '__main__':
+  app.run(debug=True)
