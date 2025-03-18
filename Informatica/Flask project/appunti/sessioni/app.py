@@ -1,4 +1,4 @@
-from flask import Flask, session, redirect, url_for, request, render_template_string, flash
+from flask import Flask, session, redirect, url_for, request, render_template, flash
 
 app = Flask(__name__)
 app.secret_key = "provola"
@@ -6,7 +6,7 @@ app.secret_key = "provola"
 @app.route("/")
 def index():
   if 'username' in session:
-    return f'Ciao, {session[session]}!</br></br><a href="{url_for("logout")}">Logout</a>'
+    return f'Ciao, {session['username']}!</br></br><a href="{url_for("logout")}">Logout</a>'
   return 'Non sei loggato.</br>Esegui il <a href="/login">login</a>'
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -23,7 +23,7 @@ def login():
       flash('Credenziali errate!', 'error')
       return redirect(url_for('login'))
     
-  return render_template_string(LOGIN_TEMPLATE)
+  return render_template('index.html')
 
 @app.route("/logout")
 def logout():
