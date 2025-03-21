@@ -1,0 +1,26 @@
+prova{
+  display: block;
+  background-color: #AAAAAA;
+}
+
+saluto{
+  display: block;
+  background-color: white;
+  color: #FF7518;
+  font-family: impact;
+  font-size: 100px
+}
+
+discorso{
+  display:block;
+  background-color: black;
+  color: white;
+  font-size: 50px
+}
+
+commiato{
+  display: block;
+  background-color: purple;
+  color: gold;
+  font-size: 25px;
+}

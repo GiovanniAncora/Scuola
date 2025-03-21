@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="./css/libri.css"?>
+<Elenco xsi:noNamespaceSchemaLocation="Elenco libri.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <scuola>
+    <nome>I.T.T. "G. Giorgi"</nome>
+    <classi>
+      <classe>
+        <nome>5^Ci</nome>
+        <libri>
+          <libro>
+            <materia>TPSIT</materia>
+            <codice>9788836003365</codice>
+            <autore>CAMAGNI PAOLO / NIKOLASSY RICCARDO</autore>
+            <titolo>NUOVO TECNOLOGIE E PROGETTAZIONE DI SISTEMI INFORMATICI E DI TELECOMUNICAZIONI / PER L'ARTICOLAZIONE INFORMATICA DEGLI ISTITUTI TECNICI SETTORE TECNOLOGICO</titolo>
+            <volume>3</volume>
+            <editore>HOEPLI</editore>
+            <prezzo>29.90</prezzo>
+            <immagine>/img/Copertina TPSIT</immagine>
+          </libro>
+          <libro>
+            <materia>Sistemi e Reti</materia>
+            <codice>9788836003457</codice>
+            <autore>LO RUSSO LUIGI / BIANCHI ELENA</autore>
+            <titolo>NUOVO SISTEMI E RETI / PER L'ARTICOLAZIONE INFORMATICA DEGLI ISTITUTI TECNICI SETTORE TECNOLOGICO</titolo>
+            <volume>3</volume>
+            <editore>HOEPLI</editore>
+            <prezzo>27.90</prezzo>
+            <immagine>/img/Copertina Sistemi</immagine>
+          </libro>
+        </libri>
+      </classe>
+    </classi>
+  </scuola>
+</Elenco>
