@@ -1,10 +1,17 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
-  return 'Qui ci andrà la pagina di home. Ci andrà la tabella degli alunni'
+  intestazioni = ['Matricola', 'Nome', 'Cognome', 'Data di nascita']
+  alunni = [
+    ['1001', 'Giovanni', 'Ancora', '2006-08-24'],
+    ['1002', 'Mattia', 'Arseni', 'NULL']
+  ]
+
+  return render_template('index.html', alunni=alunni, intestazioni=intestazioni)
 
 @app.route('/alunni/<alunno>')
 def alunni(alunno):
