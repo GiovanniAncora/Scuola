@@ -13,9 +13,9 @@ def home():
 
   return render_template('index.html', alunni=alunni, intestazioni=intestazioni)
 
-@app.route('/alunni/<alunno>')
-def alunni(alunno):
-  return f'Qui ci andrà la pagina dell\'alunno {alunno}'
+@app.route('/alunni/<matricola>')
+def alunni(matricola):
+  return f'Qui ci andrà la pagina dell\'alunno {matricola}'
 
 if __name__ == '__main__':
   app.run(debug=True)
