@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dipendenti>
+  <dipendente>
+    <nome>Mario Rossi</nome>
+    <sottoposti>
+      <dipendente>
+        <nome>Luigi Verdi</nome>
+        <sottoposti>
+          <dipendente>
+            <nome>Mauro Viola</nome>
+            <sottoposti>
+              <dipendente>
+                <nome>Tizio Indaco</nome>
+              </dipendente>
+              <dipendente>
+                <nome>Caio Cremisi</nome>
+              </dipendente>
+              <dipendente>
+                <nome>Sempronio Smeraldo</nome>
+              </dipendente>
+            </sottoposti>
+          </dipendente>
+        </sottoposti>
+      </dipendente>
+      <dipendente>
+        <nome>Paola Rosa</nome>
+        <sottoposti>
+          <dipendente>
+            <nome>Margherita Arancioni</nome>
+          </dipendente>
+        </sottoposti>
+      </dipendente>
+    </sottoposti>
+  </dipendente>
+</dipendenti>
