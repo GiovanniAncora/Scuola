@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="dipendenti.xsl" type="text/xsl"?>
 <dipendenti>
   <dipendente>
     <nome>Mario Rossi</nome>
