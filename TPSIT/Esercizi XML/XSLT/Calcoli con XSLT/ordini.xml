@@ -10,12 +10,12 @@
   <ordine>
     <prodotto>Matita</prodotto>
     <quantita>20</quantita>
-    <prezzoUnitario>0.5</prezzoUnitario>
+    <prezzoUnitario>0.7</prezzoUnitario>
   </ordine>
   <ordine>
     <prodotto>Quaderno</prodotto>
     <quantita>5</quantita>
-    <prezzoUnitario>2</prezzoUnitario>
+    <prezzoUnitario>20</prezzoUnitario>
   </ordine>
   <ordine>
     <prodotto>Gomma</prodotto>
