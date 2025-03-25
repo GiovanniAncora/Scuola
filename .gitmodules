@@ -1,3 +1,6 @@
 [submodule "Informatica/Flask project/flask02-sessioni"]
 	path = Informatica/Flask project/flask02-sessioni
 	url = https://github.com/INFOGIORGI/flask02-GiovanniAncora
+[submodule "Informatica/Flask project/Esercizio sessioni"]
+	path = Informatica/Flask project/Esercizio sessioni
+	url = https://github.com/INFOGIORGI/sessioni-GiovanniAncora
