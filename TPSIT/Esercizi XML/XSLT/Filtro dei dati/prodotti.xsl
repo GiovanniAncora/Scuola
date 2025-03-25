@@ -5,9 +5,9 @@
     <html>
     <body>
       <h1>Prodotti</h1>
-      <h2>Ma solo gli alimentari!</h2>
+      <h4>Ma solo i più costosi!</h4>
 
-      <table>
+      <table border="1">
         <tr>
           <xsl:for-each select="/prodotti/prodotto[1]/*">
             <th><xsl:value-of select="name()"/></th>
