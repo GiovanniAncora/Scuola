@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ordini.xsl" type="text/xsl"?>
+
+<ordini>
+  <ordine>
+    <prodotto>Penna nera</prodotto>
+    <quantita>10</quantita>
+    <prezzoUnitario>1</prezzoUnitario>
+  </ordine>
+  <ordine>
+    <prodotto>Matita</prodotto>
+    <quantita>20</quantita>
+    <prezzoUnitario>0.5</prezzoUnitario>
+  </ordine>
+  <ordine>
+    <prodotto>Quaderno</prodotto>
+    <quantita>5</quantita>
+    <prezzoUnitario>2</prezzoUnitario>
+  </ordine>
+  <ordine>
+    <prodotto>Gomma</prodotto>
+    <quantita>15</quantita>
+    <prezzoUnitario>0.3</prezzoUnitario>
+  </ordine>
+</ordini>
