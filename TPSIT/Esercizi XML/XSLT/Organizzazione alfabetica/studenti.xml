@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<studenti>
+    <studente>
+        <nome>Mario</nome>
+        <cognome>Rossi</cognome>
+    </studente>
+    <studente>
+        <nome>Luigi</nome>
+        <cognome>Bianchi</cognome>
+    </studente>
+    <studente>
+        <nome>Giulia</nome>
+        <cognome>Verdi</cognome>
+    </studente>
+    <studente>
+        <nome>Anna</nome>
+        <cognome>Neri</cognome>
+    </studente>
+    <studente>
+        <nome>Marco</nome>
+        <cognome>Gialli</cognome>
+    </studente>
+</studenti>
