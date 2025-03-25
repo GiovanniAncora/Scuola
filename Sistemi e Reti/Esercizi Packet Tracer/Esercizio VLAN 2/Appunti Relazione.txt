@@ -1,0 +1,23 @@
+25/03/2025
+
+DISPOSITIVI:
+10 PC-PT
+- PC0 --- PC5: Uffici
+- PC6 --- PC9: Magazzino
+
+3 Switch (2960-24TT)
+- Switch0, Switch1 e Switch2
+
+1 Router (Router-PT): Router0
+
+Cavi straight-through e crossover
+
+CONFIGURAZIONE IP:
+(Rete: 172.16.0.0/16)
+
+Router0: 172.16.0.1
+PC0 --- PC9 | 172.16.0.2 --- 172.16.0.11
+
+CONFIGURAZIONE VLAN:
+- 100: Magazzino
+- 200: Uffici
