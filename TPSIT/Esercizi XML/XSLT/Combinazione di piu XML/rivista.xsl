@@ -4,11 +4,11 @@
   <xsl:template match="/">
     <html>
     <body>
-      <div>
-        <div>
+      <div style="display: flex;">
+        <div style="width: 50%;">
           <xsl:apply-templates select="document('articoli.xml')/articoli"/>
         </div>
-        <div>
+        <div style="width: 50%;">
           <xsl:apply-templates select="document('pubblicita.xml')/pubblicita"/>
         </div>
       </div>
