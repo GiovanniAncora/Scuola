@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<articoli>
+  <articolo>
+    <titolo>Titolo 1</titolo>
+    <paragrafo>Lorem Ipsum</paragrafo>
+  </articolo>
+  <articolo>
+    <titolo>Titolo 2</titolo>
+    <paragrafo>Dolor sit amet</paragrafo>
+  </articolo>
+  <articolo>
+    <titolo>Buongiorno</titolo>
+    <paragrafo>Good Morning</paragrafo>
+  </articolo>
+</articoli>

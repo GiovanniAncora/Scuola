@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pubblicita>
+  <pubbl>
+    <titolo>Pubblicità 1</titolo>
+    <contenuto>Ciao ciao ciao</contenuto>
+  </pubbl>
+  <pubbl>
+    <titolo>Pubblicità 2</titolo>
+    <contenuto>Hello Hello Hello</contenuto>
+  </pubbl>
+</pubblicita>
