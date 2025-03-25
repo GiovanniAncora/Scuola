@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="prodotti.xsl" type="text/xsl"?>
+
+<prodotti>
+  <prodotto>
+    <nome>Pane</nome>
+    <prezzo>1</prezzo>
+    <categoria>Alimentari</categoria>
+  </prodotto>
+  <prodotto>
+    <nome>Set di penne</nome>
+    <prezzo>5</prezzo>
+    <categoria>Cancelleria</categoria>
+  </prodotto>
+  <prodotto>
+    <nome>Latte</nome>
+    <prezzo>1.5</prezzo>
+    <categoria>Alimentari</categoria>
+  </prodotto>
+  <prodotto>
+    <nome>Quaderno</nome>
+    <prezzo>2</prezzo>
+    <categoria>Cancelleria</categoria>
+  </prodotto>
+  <prodotto>
+    <nome>Detersivo</nome>
+    <prezzo>3</prezzo>
+    <categoria>Igiene</categoria>
+  </prodotto>
+  <prodotto>
+    <nome>Spazzolino</nome>
+    <prezzo>2.5</prezzo>
+    <categoria>Igiene</categoria>
+  </prodotto>
+</prodotti>
