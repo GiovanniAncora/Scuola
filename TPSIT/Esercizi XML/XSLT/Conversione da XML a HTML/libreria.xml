@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<libreria>
+  <libro>
+    <titolo>Il Fu Mattia Pascal</titolo>
+    <autore>Luigi Pirandello</autore>
+    <anno>1904</anno>
+    <genere>Romanzo</genere>
+  </libro>
+  <libro>
+    <titolo>La fabbrica di cioccolato</titolo>
+    <autore>Roald Dahl</autore>
+    <anno>1964</anno>
+    <genere>Romanzo fantastico</genere>
+  </libro>
+  <libro>
+    <titolo>Orgoglio e pregiudizio</titolo>
+    <autore>Jane Austen</autore>
+    <anno>1813</anno>
+    <genere>Romanzo</genere>
+  </libro>
+  <libro>
+    <titolo>Uno, nessuno e centomila</titolo>
+    <autore>Luigi Pirandello</autore>
+    <anno>1926</anno>
+    <genere>Romanzo drammatico</genere>
+  </libro>
+</libreria>
