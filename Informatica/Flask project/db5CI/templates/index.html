@@ -26,10 +26,10 @@
         <tbody>
             {% for alunno in alunni %}
             <tr>
-                <td>{{alunno[0]}}</td>
+                <td><a href="{{url_for('voti', studente=alunno[0])}}">{{alunno[0]}}</a></td>
                 <td>{{alunno[1]}}</td>
                 <td>{{alunno[2]}}</td>
-                <td><a href="{{url_for('voti', studente=alunno[3])}}">{{ alunno[3] }}</a></td>
+                <td>{{alunno[3]}}</td>
             </tr>
             {% endfor %}
         </tbody>

@@ -1,9 +1,11 @@
 import pymysql.cursors
 from flask import Flask, render_template
 
-conn = pymysql.connect(host='172.16.12.54', user='ospite', password='ospite', database='db5CI')
+conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', password='24082006', database='db5CI')
 cursore = conn.cursor()
 
+cursore.execute('SHOW COLUMNS FROM verifiche;')
+print(cursore.fetchall())
 
 app = Flask(__name__)
 
@@ -14,7 +16,7 @@ def index():
     risultato = cursore.fetchall()
     return render_template('index.html', alunni= risultato, campi= cursore.description)
 
-@app.route('/<studente>')
+@app.route('/voti/<studente>')
 def voti(studente):
     queryVoti = 'SELECT * FROM verifiche WHERE studente = %s'
     cursore.execute(queryVoti, (studente,))
