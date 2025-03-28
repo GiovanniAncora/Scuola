@@ -14,7 +14,7 @@ app.secret_key = 'provola1234'
 
 @app.route('/')
 def index():
-    query = 'SELECT * FROM alunni'
+    query = 'SELECT matricola, nome, cognome, data_nascita FROM alunni'
     cursore.execute(query)
     risultato = cursore.fetchall()
     return render_template('index.html', alunni= risultato, campi= cursore.description)
