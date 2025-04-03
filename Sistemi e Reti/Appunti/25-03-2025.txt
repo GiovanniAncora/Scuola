@@ -1,0 +1,44 @@
+APPUNTI & Relazione VLAN
+
+--== 25-03-2025 ==--
+DISPOSITIVI:
+- 4 PC, 2 per alunni, 2 per docenti (PC-PT)
+	- PC Alunno 1 e 2
+	- PC Docente 1 e 2
+- 3 Switch per suddividere in VLAN (Switch-PT)
+	- Switch1
+	- Switch2
+	- Switch Router
+- 1 Router (Router-PT)
+- Cavi straight-through
+- Cavi crossover
+
+COFIGURAZIONE IP:
+Rete --> 172.16.0.0/16
+
+Router --> 172.16.3.1 (Fa/0)
+PC Docente 1 e 2 --> 172.16.3.2 e 172.16.3.3 (Fa/0)
+PC Alunno 1 e 2 --> 172.16.3.4 e 172.16.3.5 (Fa/0)
+
+CREAZIONE VLAN:
+Cliccare su Switch -> Config -> VLAN Database
+Su tutti gli switch...
+- VLAN Alunni
+	- VLAN Number: 100
+	- VLAN Name: alunni
+- VLAN Docenti
+	- VLAN Number: 200
+	- VLAN Name: docenti
+
+-- Configurazione porte:
+Su Switch Router, lato Alunni e lato Docenti...
+- Tipo: Trunk
+Su Switch Router, lato Router...
+- Tipo: Access, VLAN 200
+
+Per gli switch 1 e 2...
+Inserire dal lato dei PC il tipo Access e la VLAN corretta per docente / alunno
+Inserire dal lato dello Switch Router il tipo Trunk
+
+REGOLA:
+Trunk sono le comunicazioni per qualsiasi VLAN, Access sono ristrette ad una sola VLAN.
