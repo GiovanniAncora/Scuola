@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml-stylesheet href="css/libri.css" type="text/css"?> -->
+<!-- <?xml-stylesheet href="css/style.css" type="text/css"?> -->
+<?xml-model href="libri.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<?xml-stylesheet href="libri.xsl" type="text/xsl"?>
+
+<elenco>
+  <scuola>
+    <nome>I.T.T. "G. Giorgi"</nome>
+    <classi>
+      <classe>
+        <nome>5CI</nome>
+        <libri>
+          <libro>
+            <materia>Religione</materia>
+            <codice>9788810614068</codice>
+            <autore>Sergio Bocchini</autore>
+            <titolo>Incontro all'altro</titolo>
+            <editore>EDB EDIZ.DEHONIANE BO (CED)</editore>
+            <prezzo>17.10</prezzo>
+            <immagine>Copertina-Religione.jpg</immagine>
+          </libro>
+          <libro>
+            <materia>Letteratura</materia>
+            <codice>9788839535900</codice>
+            <autore>Alessandra Terrile</autore>
+            <titolo>Vivere tante vite 3</titolo>
+            <editore>Paravia</editore>
+            <prezzo>41.90</prezzo>
+            <immagine>Copertina-Italiano.jpg</immagine>
+          </libro>
+          <libro>
+            <materia>Inglese Tencnico</materia>
+            <codice>9788829853076</codice>
+            <autore>Ravecca Mirella</autore>
+            <titolo>Information Technology Competences and Skills</titolo>
+            <editore>Minerva Italica</editore>
+            <prezzo>27.90</prezzo>
+            <immagine>Copertina-Inglese-Tecnico.jpg</immagine>
+          </libro>
+          <libro>
+            <materia>Inglese</materia>
+            <codice>9780194602020</codice>
+            <autore>AA VV</autore>
+            <titolo>Venture B1+</titolo>
+            <editore>Oxford University Press</editore>
+            <prezzo>30.70</prezzo>
+            <immagine>Copertina-Inglese.jpg</immagine>
+          </libro>
+        </libri>
+      </classe>
+    </classi>
+  </scuola>
+</elenco>

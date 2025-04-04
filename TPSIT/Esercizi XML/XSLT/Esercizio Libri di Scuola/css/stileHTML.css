@@ -1,0 +1,44 @@
+table{
+    background-color: black;
+    width: 100%;
+}
+
+th{
+    background-color: #FF7518;
+}
+
+td{
+    background-color: antiquewhite;
+}
+
+th, td{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+th{
+    border-bottom: 5px solid black;
+}
+
+td{
+    border-bottom: 2px solid black;
+}
+
+tr{
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr 5fr 5fr 1fr 3fr;
+}
+
+tr * {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.b-dx{
+    border-right: 1px dashed black;
+}
+
+h1{
+    width: 90%;
+    background-color: #FF7518;
+}

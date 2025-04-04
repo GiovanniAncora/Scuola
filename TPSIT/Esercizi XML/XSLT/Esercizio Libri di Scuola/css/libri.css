@@ -1,0 +1,39 @@
+* {
+  background-color: ivory;
+}
+
+scuola{
+  display: block;
+}
+
+scuola *{
+  display: block;
+}
+
+libri{
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+libro{
+  display: grid;
+  grid-template-columns: 3fr 5fr 5fr 5fr 5fr 2fr 3fr;
+  align-items: center;
+  text-align: center;
+  column-gap: 0.5%;
+  background-color: darkslategrey;
+  padding: 0.05% 1%;
+}
+
+libro *{
+  background-color: blanchedalmond;
+  height: 5vh;
+  height: 90%;
+  align-content: center;
+}
+
+img{
+  height: 100%;
+  width: 100%;
+}
